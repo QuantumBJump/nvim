@@ -2,7 +2,7 @@
 - Decide which plugins to move from old nvim
     - [x] easymotion/vim-easymotion (chose hop instead)
     - [ ] vim-airline/vim-airline-themes (nice status bar)
-    - [ ] sedm0784/vim-resize-mode (easier window resizing)
+    - [x] sedm0784/vim-resize-mode (easier window resizing)
     - [x] tpope/vim-commentary (comment lines/selections)
     - [ ] tpope/vim-surround (surround selection with characters (e.g. (), {}, "", etc)
     - [x] tpope/vim-fugitive

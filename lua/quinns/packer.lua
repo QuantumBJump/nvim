@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
 		'phaazon/hop.nvim',
 		branch = 'v2',
 	}
+	use('sedm0784/vim-resize-mode')
 	use('tpope/vim-commentary')
 end)
 
