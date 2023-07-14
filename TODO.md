@@ -3,23 +3,24 @@
     - [x] easymotion/vim-easymotion (chose hop instead)
     - [ ] vim-airline/vim-airline-themes (nice status bar)
     - [ ] sedm0784/vim-resize-mode (easier window resizing)
-    - [ ] tpope/vim-commentary (comment lines/selections)
+    - [x] tpope/vim-commentary (comment lines/selections)
     - [ ] tpope/vim-surround (surround selection with characters (e.g. (), {}, "", etc)
-    - [ ] tpope/vim-fugitive DONE
+    - [x] tpope/vim-fugitive
     - [ ] airblade/vim-gitgutter (wat do?)
-    - [ ] NERDTree (not sure)
+    - [ ] NERDTree (not sure, might not be necessary due to telescope)
         - [ ] preservim/nerdtree
         - [ ] Xuyuanp/nerdtree-git-plugin
         - [ ] jistr/vim-nerdtree-tabs
     - [ ] session preservation
+        - This might not be necessary due to harpoon
         - [ ] xolox/vim-misc
         - [ ] xolox/vim-session
 - keybinds
     - [x] pane movement
     - [ ] lsp stuff
         - [ ] format
-        - [ ] move between diagnostics
-        - [ ] go to definition, show docs
+        - [x] move between diagnostics
+        - [x] go to definition, show docs
     - [x] telescope
         - [x] fs -> gitfiles
         - [x] fb -> buffers
@@ -27,7 +28,6 @@
         - [x] fcb -> bcommits
         - [x] fm -> keymaps
     - [x] Commentary
-    - [ ] delete current buffer (spc bd) (UNNEEDED because of Telescope deletion)
 - [ ] rice
     - [ ] line numbers
     - [ ] tabstop
