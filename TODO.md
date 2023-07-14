@@ -31,3 +31,4 @@
 - [ ] rice
     - [ ] line numbers
     - [ ] tabstop
+    - [ ] Change default split behaviour (I prefer split right rather than split left)
