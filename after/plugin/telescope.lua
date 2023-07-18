@@ -29,9 +29,10 @@ telescope.setup({
 })
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc='Telescope find files'})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {desc='Telescope live grep'})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {desc='Telescope find buffer'})
+vim.keymap.set('n', '<leader>bb', builtin.buffers, {desc='Telescope find buffer'})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {desc='Telescope find help'})
 vim.keymap.set('n', '<leader>fm', builtin.keymaps, {desc='Telescope find keymap'})
+vim.keymap.set('n', '<leader>fv', ":Neotree reveal left<CR>", { noremap = true, desc = 'Telescope file browser' })
 
 -- Git stuff
 vim.keymap.set('n', '<leader>fs', builtin.git_files, {desc='Telescope git files'})

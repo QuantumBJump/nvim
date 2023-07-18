@@ -58,4 +58,13 @@ return require('packer').startup(function(use)
     }
     use('sedm0784/vim-resize-mode')
     use('tpope/vim-commentary')
+    use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+        }
+    }
 end)

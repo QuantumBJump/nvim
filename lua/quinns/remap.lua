@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>fv", vim.cmd.Ex, {desc='View files'}) -- Files/view
 
 vim.keymap.set("t", "<esc>", "<C-\\><C-N>") -- esc to leave insert mode in terminal
 

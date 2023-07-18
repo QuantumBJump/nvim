@@ -7,10 +7,7 @@
     - [ ] tpope/vim-surround (surround selection with characters (e.g. (), {}, "", etc)
     - [x] tpope/vim-fugitive
     - [ ] airblade/vim-gitgutter (wat do?)
-    - [ ] NERDTree (not sure, might not be necessary due to telescope)
-        - [ ] preservim/nerdtree
-        - [ ] Xuyuanp/nerdtree-git-plugin
-        - [ ] jistr/vim-nerdtree-tabs
+    - [x] neotree
     - [ ] session preservation
         - This might not be necessary due to harpoon
         - [ ] xolox/vim-misc
