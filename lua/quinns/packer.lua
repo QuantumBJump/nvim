@@ -68,4 +68,5 @@ return require('packer').startup(function(use)
         }
     }
     use('airblade/vim-gitgutter')
+    use('xiyaowong/transparent.nvim')
 end)
