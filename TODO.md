@@ -6,7 +6,7 @@
     - [x] tpope/vim-commentary (comment lines/selections)
     - [ ] tpope/vim-surround (surround selection with characters (e.g. (), {}, "", etc)
     - [x] tpope/vim-fugitive
-    - [ ] airblade/vim-gitgutter (wat do?)
+    - [x] airblade/vim-gitgutter
     - [x] neotree
     - [ ] session preservation
         - This might not be necessary due to harpoon
