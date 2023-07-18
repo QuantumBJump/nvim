@@ -28,7 +28,7 @@
         - [x] fcb -> bcommits
         - [x] fm -> keymaps
     - [x] Commentary
-    - [ ] Ctrl+j/k to scroll in Telescope
+    - [x] Ctrl+j/k to scroll in Telescope
     - [ ] Add e movement to Hop
 - [ ] rice
     - [x] line numbers

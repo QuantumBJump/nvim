@@ -1,6 +1,16 @@
 local telescope = require('telescope')
 local builtin = require('telescope.builtin')
 telescope.setup({
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-j>"] = "move_selection_next",
+                ["<C-k>"] = "move_selection_previous",
+                ["<C-n>"] = "preview_scrolling_up",
+                ["<C-p>"] = "preview_scrolling_down",
+            }
+        }
+    },
 	pickers = {
 		buffers = {
 			show_all_buffers = true,
