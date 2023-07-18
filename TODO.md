@@ -34,3 +34,5 @@
     - [x] line numbers
     - [x] tabstop
     - [x] Change default split behaviour (I prefer split right rather than split left)
+- [ ] Add filetype.lua for custom filetype stuffs
+    - see https://github.com/aydinmercan/dotfiles/blob/lainpad/.config/nvim/filetype.lua
