@@ -28,7 +28,9 @@
         - [x] fcb -> bcommits
         - [x] fm -> keymaps
     - [x] Commentary
+    - [ ] Ctrl+j/k to scroll in Telescope
+    - [ ] Add e movement to Hop
 - [ ] rice
-    - [ ] line numbers
-    - [ ] tabstop
-    - [ ] Change default split behaviour (I prefer split right rather than split left)
+    - [x] line numbers
+    - [x] tabstop
+    - [x] Change default split behaviour (I prefer split right rather than split left)
