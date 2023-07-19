@@ -1,6 +1,7 @@
 -- Easier to jump when I know line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
 
 -- 4-space tab is better than 8 but still disincentivises unnecessary nesting
 vim.opt.tabstop = 4

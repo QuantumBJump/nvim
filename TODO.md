@@ -5,6 +5,7 @@
     - [x] tpope/vim-commentary (comment lines/selections)
     - [ ] tpope/vim-surround (surround selection with characters (e.g. (), {}, "", etc)
     - [x] tpope/vim-fugitive
+    - [ ] Autoclose plugin (delimitmate? Something new?)
     - [x] airblade/vim-gitgutter
     - [x] neotree
     - [ ] session preservation
