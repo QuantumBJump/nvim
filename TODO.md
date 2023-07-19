@@ -1,7 +1,6 @@
 # TODO (nvim)
 - Decide which plugins to move from old nvim
     - [x] easymotion/vim-easymotion (chose hop instead)
-    - [ ] vim-airline/vim-airline-themes (nice status bar)
     - [x] sedm0784/vim-resize-mode (easier window resizing)
     - [x] tpope/vim-commentary (comment lines/selections)
     - [ ] tpope/vim-surround (surround selection with characters (e.g. (), {}, "", etc)
@@ -14,8 +13,8 @@
         - [ ] xolox/vim-session
 - keybinds
     - [x] pane movement
-    - [ ] lsp stuff
-        - [ ] format
+    - [x] lsp stuff
+        - [x] format
         - [x] move between diagnostics
         - [x] go to definition, show docs
     - [x] telescope
