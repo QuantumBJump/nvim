@@ -26,6 +26,7 @@
     - [x] Commentary
     - [x] Ctrl+j/k to scroll in Telescope
     - [ ] Add e movement to Hop
+    - [x] close current buffer
 - [ ] rice
     - [x] line numbers
     - [x] tabstop
