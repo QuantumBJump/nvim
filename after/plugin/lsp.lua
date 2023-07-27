@@ -12,9 +12,9 @@ lsp.ensure_installed({
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-j>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-j>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-k>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping.complete(),
 })
 local cmp_action = require('lsp-zero').cmp_action()
@@ -28,8 +28,8 @@ cmp.setup({
         { name = 'luasnip' },
     },
     mapping = {
-        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+        ['<C-j>'] = cmp_action.luasnip_jump_forward(),
+        ['<C-k>'] = cmp_action.luasnip_jump_backward(),
     }
 })
 
@@ -39,8 +39,11 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end,
         { buffer = bufnr, remap = false, desc = 'go to definition' })
-    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { buffer = bufnr, remap = false,
-        desc = 'show documentation' })
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {
+        buffer = bufnr,
+        remap = false,
+        desc = 'show documentation'
+    })
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end,
         { buffer = bufnr, remap = false, desc = 'view workspace symbols' })
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
@@ -53,8 +56,11 @@ lsp.on_attach(function(client, bufnr)
         { buffer = bufnr, remap = false, desc = 'view code actions' })
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end,
         { buffer = bufnr, remap = false, desc = 'view references' })
-    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, { buffer = bufnr, remap = false,
-        desc = 'rename' })
+    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, {
+        buffer = bufnr,
+        remap = false,
+        desc = 'rename'
+    })
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end,
         { buffer = bufnr, remap = false, desc = 'signature help' })
     vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end,
