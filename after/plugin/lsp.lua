@@ -7,6 +7,7 @@ lsp.ensure_installed({
     'tsserver',
     'eslint',
     'rust_analyzer',
+    'gopls',
 })
 
 local cmp = require('cmp')
@@ -28,8 +29,8 @@ cmp.setup({
         { name = 'luasnip' },
     },
     mapping = {
-        ['<C-j>'] = cmp_action.luasnip_jump_forward(),
-        ['<C-k>'] = cmp_action.luasnip_jump_backward(),
+        ['<C-n>'] = cmp_action.luasnip_jump_forward(),
+        ['<C-p>'] = cmp_action.luasnip_jump_backward(),
     }
 })
 

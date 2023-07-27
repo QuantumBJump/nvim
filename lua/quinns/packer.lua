@@ -13,16 +13,11 @@ return require('packer').startup(function(use)
             { 'nvim-lua/plenary.nvim' },
             { 'nvim-telescope/telescope-live-grep-args.nvim' },
         },
-        config = function ()
+        config = function()
             require('telescope').load_extension('live_grep_args')
         end,
     }
-    use({
-        'folke/tokyonight.nvim',
-        config = function()
-            vim.cmd('colorscheme tokyonight-moon')
-        end
-    })
+    use('folke/tokyonight.nvim')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use 'nvim-treesitter/playground'
     use {
@@ -73,6 +68,8 @@ return require('packer').startup(function(use)
             "MunifTanjim/nui.nvim",
         }
     }
+    use('Shatur/neovim-session-manager')
+    use('nvim-telescope/telescope-ui-select.nvim')
     use('airblade/vim-gitgutter')
     use('xiyaowong/transparent.nvim')
     use('norcalli/nvim-colorizer.lua')
