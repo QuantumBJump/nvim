@@ -1,4 +1,6 @@
 # TODO (nvim)
+- [x] https://github.com/nvim-telescope/telescope-live-grep-args.nvim
+    allows telescope grepping with arguments (certain files, etc)
 - Decide which plugins to move from old nvim
     - [x] easymotion/vim-easymotion (chose hop instead)
     - [x] sedm0784/vim-resize-mode (easier window resizing)
