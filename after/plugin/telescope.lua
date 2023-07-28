@@ -38,6 +38,12 @@ telescope.setup({
                 },
             },
         },
+        find_files = {
+            hidden = true,
+            file_ignore_patterns = {
+                ".git",
+            },
+        }
     },
 })
 telescope.load_extension('ui-select')
