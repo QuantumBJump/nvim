@@ -41,7 +41,8 @@ telescope.setup({
         find_files = {
             hidden = true,
             file_ignore_patterns = {
-                "%.git$",
+                "%.git$", -- ".git" file, as seen in submodules
+                "%.git/", -- ".git/" directory, as seen in main git repos
             },
         }
     },
