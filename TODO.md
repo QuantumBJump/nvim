@@ -1,4 +1,7 @@
 # TODO (nvim)
+- [ ] Keep cursor a few lines away from top/bottom of screen
+- [ ] todo-comments.nvim
+- [ ] trouble.nvim
 - [x] https://github.com/nvim-telescope/telescope-live-grep-args.nvim
     allows telescope grepping with arguments (certain files, etc)
 - Decide which plugins to move from old nvim
@@ -10,11 +13,13 @@
     - [ ] Autoclose plugin (delimitmate? Something new?)
     - [x] airblade/vim-gitgutter
     - [x] neotree
-    - [ ] session preservation
+    - [x] session preservation
         - This might not be necessary due to harpoon
-        - [ ] xolox/vim-misc
-        - [ ] xolox/vim-session
+        - [x] xolox/vim-misc
+        - [x] xolox/vim-session
 - keybinds
+    - [ ] J and K to move line/selection up and down
+    - [ ] Add e movement to Hop
     - [x] pane movement
     - [x] lsp stuff
         - [x] format
@@ -28,9 +33,8 @@
         - [x] fm -> keymaps
     - [x] Commentary
     - [x] Ctrl+j/k to scroll in Telescope
-    - [ ] Add e movement to Hop
     - [x] close current buffer
-- [ ] rice
+- [x] rice
     - [x] line numbers
     - [x] tabstop
     - [x] Change default split behaviour (I prefer split right rather than split left)
