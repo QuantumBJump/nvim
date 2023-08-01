@@ -22,6 +22,8 @@ vim.opt.undofile = true
 -- Highlight while I'm searching, but not after
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Nice colours
 vim.opt.termguicolors = true
