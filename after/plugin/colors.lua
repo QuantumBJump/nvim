@@ -5,7 +5,7 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-require("tokyonight").setup {
+require("tokyonight").setup({
     style = "moon",
     transparent = false,
     on_colors = function(colors)
@@ -21,7 +21,8 @@ require("tokyonight").setup {
             fg = "#6666ff"
         }
     end
-}
+})
+vim.cmd[[colorscheme tokyonight]]
 require('colorizer').setup()
 
 -- Uncomment if you want the background to be seethrough by default
