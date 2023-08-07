@@ -3,7 +3,6 @@
 - [ ] todo-comments.nvim
 - [ ] trouble.nvim
 - [ ] sourcegraph.nvim (for work)
-- [ ] obsidian.nvim
 - [x] https://github.com/nvim-telescope/telescope-live-grep-args.nvim
     allows telescope grepping with arguments (certain files, etc)
 - Decide which plugins to move from old nvim
