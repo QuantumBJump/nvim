@@ -16,5 +16,5 @@ vim.keymap.set("n", "<leader>bd", ":bp <BAR> bd #<CR>", { desc = 'close current 
 vim.keymap.set("n", "<Bslash>/", ":Commentary<cr>", { desc = 'Comment out line' })
 
 -- File View
-vim.keymap.set('n', '<leader>fv', ":Neotree reveal left<CR>", { noremap = true, desc = 'file tree' })
+vim.keymap.set('n', '<leader>fv', ":Ex<CR>", { noremap = true, desc = 'file tree' })
 vim.keymap.set('n', '<leader>ft', ":Neotree reveal left toggle<CR>", { noremap = true, desc = 'toggle file tree' })
