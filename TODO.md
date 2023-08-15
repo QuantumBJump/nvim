@@ -39,5 +39,7 @@
     - [x] line numbers
     - [x] tabstop
     - [x] Change default split behaviour (I prefer split right rather than split left)
+- [ ] telescope file browser
+- [ ] show buffers in status bar for git merge reasons
 - [ ] Add filetype.lua for custom filetype stuffs
     - see https://github.com/aydinmercan/dotfiles/blob/lainpad/.config/nvim/filetype.lua
