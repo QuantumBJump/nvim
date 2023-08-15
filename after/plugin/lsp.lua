@@ -34,6 +34,32 @@ cmp.setup({
     }
 })
 
+require('lspconfig').gopls.setup({
+  settings = {
+    gopls = {
+      directoryFilters = { '-plz-out' },
+      analyses = {
+        unusedparams = true,
+      },
+      usePlaceholders = true,
+      semanticTokens = true,
+      staticcheck = true,
+    },
+  },
+  root_dir = function(fname)
+    local go_mod = vim.fs.find('go.mod', { upward = true, path = vim.fs.dirname(fname) })[1]
+    if go_mod then
+      return vim.fs.dirname(go_mod)
+    end
+    local plzconfig = vim.fs.find('.plzconfig', { upward = true, path = vim.fs.dirname(fname) })[1]
+    local src = vim.fs.find('src', { upward = true, path = vim.fs.dirname(fname) })[1]
+    if plzconfig and src then
+      vim.env.GOPATH = string.format('%s:%s/plz-out/go', vim.fs.dirname(src), vim.fs.dirname(plzconfig))
+      vim.env.GO111MODULE = 'off'
+    end
+    return vim.fn.getcwd()
+  end,
+})
 lsp.set_preferences({
 })
 

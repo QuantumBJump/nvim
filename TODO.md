@@ -43,3 +43,4 @@
 - [ ] show buffers in status bar for git merge reasons
 - [ ] Add filetype.lua for custom filetype stuffs
     - see https://github.com/aydinmercan/dotfiles/blob/lainpad/.config/nvim/filetype.lua
+- [ ] Move work golang setup to private repo
