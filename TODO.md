@@ -11,7 +11,6 @@
     - [x] tpope/vim-commentary (comment lines/selections)
     - [ ] tpope/vim-surround (surround selection with characters (e.g. (), {}, "", etc)
     - [x] tpope/vim-fugitive
-    - [ ] Autoclose plugin (delimitmate? Something new?)
     - [x] airblade/vim-gitgutter
     - [x] neotree
     - [x] session preservation
@@ -21,6 +20,7 @@
 - keybinds
     - [ ] J and K to move line/selection up and down
     - [ ] Add e movement to Hop
+    - [ ] Make jump movements center screen afterwards (e.g. remap n to nzz)
     - [x] pane movement
     - [x] lsp stuff
         - [x] format
@@ -44,3 +44,5 @@
 - [ ] Add filetype.lua for custom filetype stuffs
     - see https://github.com/aydinmercan/dotfiles/blob/lainpad/.config/nvim/filetype.lua
 - [ ] Move work golang setup to private repo
+- [ ] Plugin to show tab/whitespace (a la rainbowtab in vscode)
+- [ ] Allow usage of both tabs and telescope
