@@ -21,6 +21,7 @@
     - [ ] J and K to move line/selection up and down
     - [ ] Add e movement to Hop
     - [ ] Make jump movements center screen afterwards (e.g. remap n to nzz)
+    - [ ] implement C-n/C-p to jump within snippet
     - [x] pane movement
     - [x] lsp stuff
         - [x] format
