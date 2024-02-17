@@ -1,64 +1,59 @@
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
-lsp.nvim_workspace()
 
-lsp.ensure_installed({
-    'tsserver',
-    'eslint',
-    'rust_analyzer',
-    'gopls',
-})
+local lua_opts = lsp.nvim_lua_ls()
+require('lspconfig').lua_ls.setup(lua_opts)
 
 local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete(),
-})
 local cmp_action = require('lsp-zero').cmp_action()
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
-require('luasnip.loaders.from_vscode').lazy_load()
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.setup({
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+        ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+        ["<C-Space>"] = cmp.mapping.complete(),
+    }),
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-    },
-    mapping = {
-        ['<C-n>'] = cmp_action.luasnip_jump_forward(),
-        ['<C-p>'] = cmp_action.luasnip_jump_backward(),
     }
 })
 
+require('luasnip.loaders.from_vscode').lazy_load()
+
 require('lspconfig').gopls.setup({
-  settings = {
-    gopls = {
-      directoryFilters = { '-plz-out' },
-      analyses = {
-        unusedparams = true,
-      },
-      usePlaceholders = true,
-      semanticTokens = true,
-      staticcheck = true,
+    settings = {
+        gopls = {
+            directoryFilters = { '-plz-out' },
+            analyses = {
+                unusedparams = true,
+            },
+            usePlaceholders = true,
+            semanticTokens = true,
+            staticcheck = true,
+        },
     },
-  },
-  root_dir = function(fname)
-    local go_mod = vim.fs.find('go.mod', { upward = true, path = vim.fs.dirname(fname) })[1]
-    if go_mod then
-      return vim.fs.dirname(go_mod)
-    end
-    local plzconfig = vim.fs.find('.plzconfig', { upward = true, path = vim.fs.dirname(fname) })[1]
-    local src = vim.fs.find('src', { upward = true, path = vim.fs.dirname(fname) })[1]
-    if plzconfig and src then
-      vim.env.GOPATH = string.format('%s:%s/plz-out/go', vim.fs.dirname(src), vim.fs.dirname(plzconfig))
-      vim.env.GO111MODULE = 'off'
-    end
-    return vim.fn.getcwd()
-  end,
+    root_dir = function(fname)
+        local go_mod = vim.fs.find('go.mod', { upward = true, path = vim.fs.dirname(fname) })[1]
+        if go_mod then
+            return vim.fs.dirname(go_mod)
+        end
+        local plzconfig = vim.fs.find('.plzconfig', { upward = true, path = vim.fs.dirname(fname) })[1]
+        local src = vim.fs.find('src', { upward = true, path = vim.fs.dirname(fname) })[1]
+        if plzconfig and src then
+            vim.env.GOPATH = string.format('%s:%s/plz-out/go', vim.fs.dirname(src), vim.fs.dirname(plzconfig))
+            vim.env.GO111MODULE = 'off'
+        end
+        return vim.fn.getcwd()
+    end,
 })
 lsp.set_preferences({
 })
@@ -93,5 +88,21 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end,
         { buffer = bufnr, remap = false, desc = 'format file' })
 end)
+
+-- Mason Setup
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'tsserver',
+        'eslint',
+        'rust_analyzer',
+        'gopls',
+        'lua_ls',
+    },
+    handlers = {
+        lsp.default_setup,
+    },
+})
+
 
 lsp.setup()
