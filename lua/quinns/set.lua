@@ -31,6 +31,7 @@ vim.opt.termguicolors = true
 -- Show a line to stop me writing too long lines
 vim.opt.colorcolumn = "120"
 vim.opt.signcolumn = "auto"
+vim.opt.textwidth = "0"
 
 -- I want to split to the right by default
 vim.opt.splitright = true
