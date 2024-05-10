@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
             require('harpoon').setup(
                 {
                     tabline = true,
+                    mark_branch = true,
                 }
             )
         end
