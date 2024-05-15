@@ -55,6 +55,7 @@ require('lspconfig').gopls.setup({
         return vim.fn.getcwd()
     end,
 })
+require('lspconfig').nil_ls.setup({})
 lsp.set_preferences({
 })
 
