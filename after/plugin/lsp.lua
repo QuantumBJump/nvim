@@ -56,12 +56,24 @@ require('lspconfig').gopls.setup({
     end,
 })
 require('lspconfig').nil_ls.setup({})
+
+require('lspconfig').rust_analyzer.setup{
+   settings = {
+        ['rust-analyzer'] = {
+            diagnostics = {
+                enable = true;
+            }
+        }
+   }
+}
 lsp.set_preferences({
 })
 
 lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end,
         { buffer = bufnr, remap = false, desc = 'go to definition' })
+    vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end,
+        { buffer = bufnr, remap = false, desc = 'view references' })
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {
         buffer = bufnr,
         remap = false,
@@ -77,8 +89,6 @@ lsp.on_attach(function(client, bufnr)
         { buffer = bufnr, remap = false, desc = 'next diagnostic' })
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
         { buffer = bufnr, remap = false, desc = 'view code actions' })
-    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end,
-        { buffer = bufnr, remap = false, desc = 'view references' })
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, {
         buffer = bufnr,
         remap = false,
@@ -94,7 +104,6 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'rust_analyzer',
         'gopls',
         'lua_ls',
     },
