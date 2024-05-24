@@ -69,7 +69,10 @@ return require('packer').startup(function(use)
             "MunifTanjim/nui.nvim",
         }
     }
-    use('Shatur/neovim-session-manager')
+    use{
+        'Shatur/neovim-session-manager',
+        commit = '892c55f7256fe170301a1fdd21752982c75c3507',
+    }
     use('nvim-telescope/telescope-ui-select.nvim')
     use('airblade/vim-gitgutter')
     use('xiyaowong/transparent.nvim')
