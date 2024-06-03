@@ -13,6 +13,14 @@ vim.keymap.set('', '<Bslash>w', function()
     hop.hint_words({ direction = directions.AFTER_CURSOR })
 end, { remap = true, desc = "Hop forward words" })
 
+-- e jumps to end of word
+vim.keymap.set('', '<Bslash>e', function()
+    hop.hint_words({
+        direction = directions.AFTER_CURSOR,
+        hint_position = require'hop.hint'.HintPosition.END,
+    })
+end, { remap = true, desc = "Hop forwards to word ends" })
+
 -- b jumps backward words
 vim.keymap.set('', '<Bslash>b', function()
     hop.hint_words({ direction = directions.BEFORE_CURSOR })
