@@ -86,4 +86,35 @@ require("lazy").setup({
     'airblade/vim-gitgutter',
     'xiyaowong/transparent.nvim',
     'norcalli/nvim-colorizer.lua',
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*", -- recommended, use latest release instead of latest commit
+        lazy = true,
+        -- ft = "markdown", -- Apply to all markdown files
+        event = {
+            -- Only apply to markdown files in obsidian vault
+            "BufReadPre " .. vim.fn.expand "~" .. "/Documents/obsidian/**.md",
+            "BufNewFile " .. vim.fn.expand "~" .. "/Documents/obsidian/**.md",
+        },
+        dependencies = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
+
+            -- see below for full list of optional dependencies 👇
+        },
+        opts = {
+            workspaces = {
+                {
+                    name = "personal",
+                    path = "~/Documents/obsidian/personal-wiki",
+                },
+                {
+                    name = "DnDetectives",
+                    path = "~/Documents/obsidian/DnDetectives",
+                },
+            },
+
+            -- see below for full list of options 👇
+        },
+    }
 })
