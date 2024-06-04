@@ -18,9 +18,9 @@
         - [x] xolox/vim-misc
         - [x] xolox/vim-session
 - keybinds
-    - [ ] Make jump movements center screen afterwards (e.g. remap n to nzz)
     - [x] J and K to move line/selection up and down
     - [x] Add e movement to Hop
+    - [x] Make jump movements center screen afterwards (e.g. remap n to nzz)
     - [x] implement C-n/C-p to jump within snippet
     - [x] pane movement
     - [x] lsp stuff

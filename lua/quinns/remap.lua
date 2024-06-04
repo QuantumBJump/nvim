@@ -19,6 +19,11 @@ vim.keymap.set("n", "<Bslash>/", ":Commentary<cr>", { desc = 'Comment out line' 
 vim.keymap.set('n', '<leader>fv', ":Ex<CR>", { noremap = true, desc = 'file tree' })
 vim.keymap.set('n', '<leader>ft', ":Neotree reveal left<CR>", { noremap = true, desc = 'toggle file tree' })
 
+-- Center screen after jumping
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- J and K move line/selection
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
