@@ -18,3 +18,8 @@ vim.keymap.set("n", "<Bslash>/", ":Commentary<cr>", { desc = 'Comment out line' 
 -- File View
 vim.keymap.set('n', '<leader>fv', ":Ex<CR>", { noremap = true, desc = 'file tree' })
 vim.keymap.set('n', '<leader>ft', ":Neotree reveal left<CR>", { noremap = true, desc = 'toggle file tree' })
+
+
+-- J and K move line/selection
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")

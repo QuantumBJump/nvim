@@ -25,8 +25,12 @@ vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- Nice scrolling
+vim.opt.scrolloff = 8
 -- Nice colours
 vim.opt.termguicolors = true
+-- Fast update
+vim.opt.updatetime = 50
 
 -- Show a line to stop me writing too long lines
 vim.opt.colorcolumn = "120"
