@@ -1,3 +1,3 @@
 require("quinns.remap")
-require("quinns.packer")
+require("quinns.lazy")
 require("quinns.set")
