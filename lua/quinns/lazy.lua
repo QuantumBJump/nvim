@@ -24,6 +24,13 @@ require("lazy").setup({
             require('telescope').load_extension('live_grep_args')
         end,
     },
+    {
+        'alker0/chezmoi.vim',
+        lazy = false,
+        init = function()
+            vim.g['chezmoi#use_tmp_buffer'] = true
+        end,
+    },
     'folke/tokyonight.nvim',
     {
         'nvim-treesitter/nvim-treesitter',
