@@ -18,6 +18,7 @@ vim.keymap.set("n", "<Bslash>/", ":Commentary<cr>", { desc = 'Comment out line' 
 -- File View
 vim.keymap.set('n', '<leader>fv', ":Ex<CR>", { noremap = true, desc = 'file tree' })
 vim.keymap.set('n', '<leader>ft', ":Neotree reveal left<CR>", { noremap = true, desc = 'toggle file tree' })
+vim.keymap.set('n', '<leader>fb', ":Telescope file_browser <CR>", { desc = 'telescope file browser' })
 
 -- Center screen after jumping
 vim.keymap.set('n', '<C-d>', '<C-d>zz')

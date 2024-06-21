@@ -2,7 +2,15 @@ local telescope = require('telescope')
 local builtin = require('telescope.builtin')
 telescope.setup({
     extensions = {
-        ["ui-select"] = {}
+        ["ui-select"] = {},
+        file_browser = {
+            depth=1,
+            auto_depth=true,
+            -- disables netrw 
+            hijack_netrw = true,
+            mappings = {
+            },
+        }
     },
     defaults = {
         vimgrep_arguments = {
@@ -48,6 +56,7 @@ telescope.setup({
     },
 })
 telescope.load_extension('ui-select')
+telescope.load_extension('file_browser')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
     { desc = 'Telescope live grep' })

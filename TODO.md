@@ -1,5 +1,5 @@
 # TODO (nvim)
-- [ ] Keep cursor a few lines away from top/bottom of screen
+- [x] Keep cursor a few lines away from top/bottom of screen
 - [ ] todo-comments.nvim
 - [ ] trouble.nvim
 - [ ] sourcegraph.nvim (for work)
@@ -40,10 +40,5 @@
     - [x] line numbers
     - [x] tabstop
     - [x] Change default split behaviour (I prefer split right rather than split left)
-- [ ] telescope file browser
-- [ ] show buffers in status bar for git merge reasons
-- [ ] Add filetype.lua for custom filetype stuffs
-    - see https://github.com/aydinmercan/dotfiles/blob/lainpad/.config/nvim/filetype.lua
-- [ ] Move work golang setup to private repo
-- [ ] Plugin to show tab/whitespace (a la rainbowtab in vscode)
-- [ ] Allow usage of both tabs and telescope
+- [x] telescope file browser
+- [ ] Plugin to show tab/whitespace (a la rainbowtab in vscode) https://github.com/TheGLander/indent-rainbowline.nvim?tab=readme-ov-file

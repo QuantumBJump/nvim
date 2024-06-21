@@ -25,6 +25,10 @@ require("lazy").setup({
         end,
     },
     {
+        "nvim-telescope/telescope-file-browser.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    },
+    {
         'alker0/chezmoi.vim',
         lazy = false,
         init = function()
