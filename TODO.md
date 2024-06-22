@@ -10,7 +10,7 @@
     - [x] easymotion/vim-easymotion (chose hop instead)
     - [x] sedm0784/vim-resize-mode (easier window resizing)
     - [x] tpope/vim-commentary (comment lines/selections)
-    - [ ] tpope/vim-surround (surround selection with characters (e.g. (), {}, "", etc)
+    - [x] tpope/vim-surround (surround selection with characters (e.g. (), {}, "", etc)
     - [x] tpope/vim-fugitive
     - [x] airblade/vim-gitgutter
     - [x] neotree
