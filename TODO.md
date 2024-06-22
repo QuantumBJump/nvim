@@ -1,7 +1,7 @@
 # TODO (nvim)
 - [x] Keep cursor a few lines away from top/bottom of screen
 - [x] todo-comments.nvim
-- [ ] checkbox filling
+- [x] checkbox filling
 - [x] trouble.nvim
 - [ ] sourcegraph.nvim (for work)
 - [x] https://github.com/nvim-telescope/telescope-live-grep-args.nvim
@@ -42,4 +42,4 @@
     - [x] tabstop
     - [x] Change default split behaviour (I prefer split right rather than split left)
 - [x] telescope file browser
-- [ ] Plugin to show tab/whitespace (a la rainbowtab in vscode) https://github.com/TheGLander/indent-rainbowline.nvim?tab=readme-ov-file
+- [x] Plugin to show tab/whitespace (a la rainbowtab in vscode) https://github.com/TheGLander/indent-rainbowline.nvim?tab=readme-ov-file
