@@ -24,6 +24,7 @@ require("lazy").setup({
             require('telescope').load_extension('live_grep_args')
         end,
     },
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     {
       "folke/trouble.nvim",
       opts = {}, -- for default options, refer to the configuration section for custom setup.
