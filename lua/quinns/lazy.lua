@@ -26,6 +26,15 @@ require("lazy").setup({
     },
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     {
+      "folke/todo-comments.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      opts = {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    },
+    {
       "folke/trouble.nvim",
       opts = {}, -- for default options, refer to the configuration section for custom setup.
       cmd = "Trouble",

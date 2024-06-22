@@ -1,7 +1,8 @@
 # TODO (nvim)
 - [x] Keep cursor a few lines away from top/bottom of screen
-- [ ] todo-comments.nvim
-- [ ] trouble.nvim
+- [x] todo-comments.nvim
+- [ ] checkbox filling
+- [x] trouble.nvim
 - [ ] sourcegraph.nvim (for work)
 - [x] https://github.com/nvim-telescope/telescope-live-grep-args.nvim
     allows telescope grepping with arguments (certain files, etc)

@@ -29,7 +29,7 @@ require 'nvim-treesitter.configs'.setup {
         --         return true
         --     end
         -- end,
-        disable = function(lang, buf)
+        disable = function(_, _)
             if string.find(vim.bo.filetype, 'chezmoitmpl') then
                 return true
             end

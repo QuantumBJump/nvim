@@ -66,6 +66,8 @@ end, { desc = 'Grep in open files' })
 vim.keymap.set('n', '<leader>bb', builtin.buffers, { desc = 'Telescope find buffer' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope find help' })
 vim.keymap.set('n', '<leader>fm', builtin.keymaps, { desc = 'Telescope find keymap' })
+vim.keymap.set('n', '<leader>xc', "<cmd>Trouble todo filter = { tag = { TODO,FIX,FIXME } }<CR>")
+vim.keymap.set('n', '<leader>xn', "<cmd>Trouble todo<CR>")
 
 -- Git stuff
 vim.keymap.set('n', '<leader>fs', builtin.git_files, { desc = 'Telescope git files' })
