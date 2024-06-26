@@ -57,9 +57,11 @@ telescope.setup({
 })
 telescope.load_extension('ui-select')
 telescope.load_extension('file_browser')
+telescope.load_extension('live_grep_args')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-    { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fa', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+    { desc = 'Telescope live grep (args)' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>og', function()
     builtin.live_grep({grep_open_files=true})
 end, { desc = 'Grep in open files' })

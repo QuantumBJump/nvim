@@ -20,9 +20,6 @@ require("lazy").setup({
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-live-grep-args.nvim'
         },
-        config = function()
-            require('telescope').load_extension('live_grep_args')
-        end,
     },
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
