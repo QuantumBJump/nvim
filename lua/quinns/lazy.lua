@@ -91,8 +91,10 @@ require("lazy").setup({
         config = function()
             require('harpoon').setup(
                 {
-                    tabline = true,
-                    mark_branch = true,
+                    global_settings = {
+                        tabline = true,
+                        mark_branch = true,
+                    },
                 })
         end
     },
