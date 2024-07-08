@@ -10,7 +10,10 @@ end, { remap = true, desc = 'Hop character backwards' })
 
 -- w jumps forward words
 vim.keymap.set('', '<Bslash>w', function()
-    hop.hint_words({ direction = directions.AFTER_CURSOR })
+    hop.hint_words({
+        direction = directions.AFTER_CURSOR,
+        hint_position = require'hop.hint'.HintPosition.BEGIN
+    })
 end, { remap = true, desc = "Hop forward words" })
 
 -- e jumps to end of word

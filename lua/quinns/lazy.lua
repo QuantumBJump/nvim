@@ -122,8 +122,9 @@ require("lazy").setup({
         }
     },
     {
-        'phaazon/hop.nvim',
-        branch = 'v2',
+        'smoka7/hop.nvim',
+        version = "v2.7.0",
+
     },
     'sedm0784/vim-resize-mode',
     'tpope/vim-commentary',

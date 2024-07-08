@@ -5,7 +5,6 @@ telescope.setup({
         ["ui-select"] = {},
         file_browser = {
             depth=1,
-            auto_depth=true,
             -- disables netrw 
             hijack_netrw = true,
             mappings = {
