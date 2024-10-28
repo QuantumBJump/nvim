@@ -57,6 +57,7 @@ require('lspconfig').gopls.setup({
 })
 require('lspconfig').nil_ls.setup({})
 require('lspconfig').nixd.setup({})
+require('lspconfig').clangd.setup({})
 
 require('lspconfig').rust_analyzer.setup{
    settings = {
