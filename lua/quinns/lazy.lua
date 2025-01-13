@@ -93,7 +93,6 @@ require("lazy").setup({
                 {
                     global_settings = {
                         tabline = true,
-                        mark_branch = true,
                     },
                 })
         end
