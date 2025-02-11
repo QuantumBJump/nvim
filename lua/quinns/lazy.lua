@@ -99,27 +99,11 @@ require("lazy").setup({
     },
     'mbbill/undotree',
     'tpope/vim-fugitive',
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        dependencies = {
-            -- LSP support
-            'neovim/nvim-lspconfig',
-            'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
-
-            -- Autocompletion
-            'hrsh7th/nvim-cmp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-nvim-lua',
-            'saadparwaiz1/cmp_luasnip',
-
-            -- Snippets
-            'L3MON4D3/LuaSnip',
-            'rafamadriz/friendly-snippets',
-        }
-    },
+    {'neovim/nvim-lspconfig'},
+    {'hrsh7th/nvim-cmp'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'L3MON4D3/luasnip'},
+    {'rafamadriz/friendly-snippets'},
     {
         'smoka7/hop.nvim',
         version = "v2.7.0",
