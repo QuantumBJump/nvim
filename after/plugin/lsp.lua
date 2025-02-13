@@ -15,11 +15,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
             { buffer = bufnr, remap = false, desc = 'go to definition' })
         vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end,
             { buffer = bufnr, remap = false, desc = 'view references' })
-        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {
-            buffer = bufnr,
-            remap = false,
-            desc = 'show documentation'
-        })
+        vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end,
+            { buffer = bufnr, remap = false, desc = 'view implementations' })
+        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end,
+            { buffer = bufnr, remap = false, desc = 'show documentation' })
         vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end,
             { buffer = bufnr, remap = false, desc = 'view workspace symbols' })
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
@@ -30,11 +29,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
             { buffer = bufnr, remap = false, desc = 'next diagnostic' })
         vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
             { buffer = bufnr, remap = false, desc = 'view code actions' })
-        vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, {
-            buffer = bufnr,
-            remap = false,
-            desc = 'rename'
-        })
+        vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,
+            { buffer = bufnr, remap = false, desc = 'rename' })
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end,
             { buffer = bufnr, remap = false, desc = 'signature help' })
         vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end,
@@ -125,6 +121,7 @@ cmp.setup({
         {name = 'nvim_lsp'},
         {name = 'luasnip'},
         {name = 'friendly-snippets'},
+        {name = 'nvim_lsp_signature_help' },
     },
     snippet = {
         expand = function(args)
