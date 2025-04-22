@@ -5,6 +5,7 @@ lspconfig_defaults.capabilities = vim.tbl_deep_extend(
     lspconfig_defaults.capabilities,
     require('cmp_nvim_lsp').default_capabilities()
 )
+local luasnip = require('luasnip')
 
 -- This is where you enable features that only work if there is a language server active in the file
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -79,19 +80,23 @@ require('lspconfig').gopls.setup({
             staticcheck = true,
         },
     },
-    root_dir = function(fname)
-        local go_mod = vim.fs.find('go.mod', { upward = true, path = vim.fs.dirname(fname) })[1]
-        if go_mod then
-            return vim.fs.dirname(go_mod)
+    root_dir = function(startpath)
+        if string.find(startpath, "plz%-out") then
+            -- Separate branch, because otherwise it defaults to the repo root and becomes too slow
+            return require('lspconfig/util').root_pattern(
+                'go.mod',
+                'go.work'
+            )(startpath)
+            else
+                return require('lspconfig/util').root_pattern(
+                    -- Order matters here
+                    'BUILD',
+                    'go.work',
+                    'go.mod',
+                    '.git'
+                )(startpath)
+            end
         end
-        local plzconfig = vim.fs.find('.plzconfig', { upward = true, path = vim.fs.dirname(fname) })[1]
-        local src = vim.fs.find('src', { upward = true, path = vim.fs.dirname(fname) })[1]
-        if plzconfig and src then
-            vim.env.GOPATH = string.format('%s:%s/plz-out/go', vim.fs.dirname(src), vim.fs.dirname(plzconfig))
-            vim.env.GO111MODULE = 'off'
-        end
-        return vim.fn.getcwd()
-    end,
 })
 
 require('lspconfig').nil_ls.setup({})
@@ -110,6 +115,8 @@ require('lspconfig').rust_analyzer.setup{
    }
 }
 
+require('lspconfig').pylsp.setup({})
+
 local cmp = require('cmp')
 
 cmp.setup({
@@ -120,12 +127,11 @@ cmp.setup({
     sources = {
         {name = 'nvim_lsp'},
         {name = 'luasnip'},
-        {name = 'friendly-snippets'},
         {name = 'nvim_lsp_signature_help' },
     },
     snippet = {
         expand = function(args)
-            vim.snippet.expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -133,23 +139,23 @@ cmp.setup({
         ['<C-k>'] = cmp.mapping.select_prev_item(),
         ['<Tab>'] = cmp.mapping.confirm({ select = true }),
         ["<C-Space>"] = cmp.mapping.complete(),
+        ['<C-f>'] = cmp.mapping(function(fallback)
+            if luasnip.jumpable(1) then
+                luasnip.jump(1)
+            else
+                fallback()
+            end
+        end, { 'i', 's' }),
+        ['<C-b>'] = cmp.mapping(function (fallback)
+            if luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { 'i', 's' })
     }),
 })
 
 -- Snippet jump settings
-vim.keymap.set({'i', 's'}, '<C-f>', function()
-    if vim.snippet.active({ direction = 1 } ) then
-        return '<cmd>lua vim.snippet.jump(1)<cr>'
-    else
-        return '<C-f>'
-    end
-end, {expr = true })
-vim.keymap.set({'i', 's'}, '<C-b>', function()
-    if vim.snippet.active({ direction = -1 } ) then
-        return '<cmd>lua vim.snippet.jump(-1)<cr>'
-    else
-        return '<C-b>'
-    end
-end, {expr = true })
 require('luasnip.loaders.from_vscode').lazy_load()
 
