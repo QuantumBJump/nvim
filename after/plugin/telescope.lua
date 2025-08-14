@@ -50,6 +50,7 @@ telescope.setup({
             file_ignore_patterns = {
                 "%.git$", -- ".git" file, as seen in submodules
                 "%.git/", -- ".git/" directory, as seen in main git repos
+                "%.jj/", -- ".jj/" directory, for jujutsu projects
             },
         }
     },
