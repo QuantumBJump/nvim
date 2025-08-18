@@ -21,6 +21,13 @@ require("lazy").setup({
             'nvim-telescope/telescope-live-grep-args.nvim'
         },
     },
+    {
+        "julienvincent/hunk.nvim",
+        cmd = { "DiffEditor" },
+        config = function()
+            require("hunk").setup()
+        end,
+    },
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     { "marcuscaisey/please.nvim" },
