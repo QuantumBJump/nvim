@@ -5,6 +5,7 @@ vim.opt.cursorline = true
 
 -- 4-space tab is better than 8 but still disincentivises unnecessary nesting
 vim.opt.softtabstop = 4
+vim.opt.tabstop = 4
 vim.opt.smarttab = true
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
