@@ -30,7 +30,10 @@ require("lazy").setup({
     },
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-    { "marcuscaisey/please.nvim" },
+    {
+        "marcuscaisey/please.nvim",
+        commit = "d350eebe187da49aa71266e4403cdc7cb0a5ca47",
+    },
     { "mfussenegger/nvim-dap" },
     {
         "folke/todo-comments.nvim",
