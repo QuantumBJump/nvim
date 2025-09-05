@@ -147,14 +147,16 @@ require("lazy").setup({
     'tpope/vim-fugitive',
     { 'neovim/nvim-lspconfig' },
     { 'hrsh7th/nvim-cmp' },
-    { 'hrsh7th/cmp-nvim-lsp' },
+    {
+        'hrsh7th/cmp-nvim-lsp',
+        commit = "a8912b8",
+    },
     { 'saadparwaiz1/cmp_luasnip' },
     { 'L3MON4D3/luasnip' },
     { 'rafamadriz/friendly-snippets' },
     {
         'smoka7/hop.nvim',
         version = "v2.7.0",
-
     },
     'sedm0784/vim-resize-mode',
     'tpope/vim-commentary',
