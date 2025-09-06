@@ -103,6 +103,12 @@ require('lspconfig').nil_ls.setup({})
 
 require('lspconfig').nixd.setup({})
 
+require('lspconfig').elixirls.setup({
+    cmd = {
+        "elixir-ls"
+    }
+})
+
 require('lspconfig').clangd.setup({})
 
 require('lspconfig').rust_analyzer.setup{
