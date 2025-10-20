@@ -32,7 +32,7 @@ require("lazy").setup({
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     {
         "marcuscaisey/please.nvim",
-        commit = "d350eebe187da49aa71266e4403cdc7cb0a5ca47",
+        -- commit = "d350eebe187da49aa71266e4403cdc7cb0a5ca47",
     },
     { "mfussenegger/nvim-dap" },
     {
