@@ -6,7 +6,7 @@ telescope.setup({
         file_browser = {
             depth=1,
             -- disables netrw 
-            hijack_netrw = true,
+            -- hijack_netrw = true,
             mappings = {
             },
         }

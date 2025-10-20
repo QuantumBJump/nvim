@@ -1,7 +1,8 @@
 local Path = require('plenary.path')
 local config = require('session_manager.config')
 require('session_manager').setup({
-    autoload_mode = config.AutoloadMode.CurrentDir,
+    -- autoload_mode = config.AutoloadMode.CurrentDir,
+    autoload_mode = config.AutoloadMode.Disabled,
 })
 
 local config_group = vim.api.nvim_create_augroup('MyConfigGroup', {})
