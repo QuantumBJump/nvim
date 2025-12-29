@@ -42,11 +42,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- LANGUAGE SERVER SETUP
 local lspconfig = require('lspconfig')
 
-lspconfig.lua_ls.setup{
+lspconfig.lua_ls.setup {
     on_init = function(client)
         if client.workspace_folders then
             local path = client.workspace_folders[1].name
-            if path ~= vim.fn.stdpath('config') and (vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/luarc.jsonc')) then
+            if path ~= vim.fn.stdpath('config') and (vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/luarc.jsonc')) then
                 return
             end
         end
@@ -94,14 +94,17 @@ require('lspconfig').elixirls.setup({
 
 require('lspconfig').clangd.setup({})
 
-require('lspconfig').rust_analyzer.setup{
-   settings = {
+require('lspconfig').rust_analyzer.setup {
+    on_attach = function(client, bufnr)
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+    end,
+    settings = {
         ['rust-analyzer'] = {
             diagnostics = {
-                enable = true;
-            }
+                enable = true,
+            },
         }
-   }
+    }
 }
 
 require('lspconfig').pylsp.setup({})
@@ -114,9 +117,9 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     sources = {
-        {name = 'nvim_lsp'},
-        {name = 'luasnip'},
-        {name = 'nvim_lsp_signature_help' },
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+        { name = 'nvim_lsp_signature_help' },
     },
     snippet = {
         expand = function(args)
@@ -135,7 +138,7 @@ cmp.setup({
                 fallback()
             end
         end, { 'i', 's' }),
-        ['<C-b>'] = cmp.mapping(function (fallback)
+        ['<C-b>'] = cmp.mapping(function(fallback)
             if luasnip.jumpable(-1) then
                 luasnip.jump(-1)
             else
@@ -147,4 +150,3 @@ cmp.setup({
 
 -- Snippet jump settings
 require('luasnip.loaders.from_vscode').lazy_load()
-
