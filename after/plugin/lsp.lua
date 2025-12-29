@@ -80,23 +80,6 @@ require('lspconfig').gopls.setup({
             staticcheck = true,
         },
     },
-    -- root_dir = function(startpath)
-    --     if string.find(startpath, "plz%-out") then
-    --         -- Separate branch, because otherwise it defaults to the repo root and becomes too slow
-    --         return require('lspconfig/util').root_pattern(
-    --             'go.mod',
-    --             'go.work'
-    --         )(startpath)
-    --         else
-    --             return require('lspconfig/util').root_pattern(
-    --                 -- Order matters here
-    --                 'BUILD',
-    --                 'go.work',
-    --                 'go.mod',
-    --                 '.git'
-    --             )(startpath)
-    --         end
-    --     end
 })
 
 require('lspconfig').nil_ls.setup({})
