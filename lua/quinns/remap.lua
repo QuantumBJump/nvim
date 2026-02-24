@@ -10,7 +10,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = 'Jump window up' })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = 'Jump window right' })
 
 -- Delete buffer
-vim.keymap.set("n", "<leader>bd", ":bp <BAR> bd #<CR>", { desc = 'close current buffer'})
+vim.keymap.set("n", "<leader>bd", ":bp <BAR> bd #<CR>", { desc = 'close current buffer' })
 
 -- Comment out on \ /
 vim.keymap.set("n", "<Bslash>/", ":Commentary<cr>", { desc = 'Comment out line' })

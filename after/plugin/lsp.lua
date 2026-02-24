@@ -127,6 +127,9 @@ require('lspconfig').rust_analyzer.setup {
             diagnostics = {
                 enable = true,
             },
+            check = {
+                command = "clippy",
+            },
         }
     }
 }
