@@ -37,3 +37,11 @@ vim.keymap.set('n', '<leader>Y', '"+Y')
 
 -- toggle checkboxes
 vim.keymap.set('n', '<leader>tt', ":lua require('toggle-checkbox').toggle()<CR>")
+
+-- move between todos
+vim.keymap.set('n', ']t', function()
+    require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+vim.keymap.set('n', '[t', function()
+    require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
