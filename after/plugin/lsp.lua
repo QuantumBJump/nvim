@@ -136,6 +136,15 @@ require('lspconfig').rust_analyzer.setup {
 
 require('lspconfig').pylsp.setup({})
 
+-- Terraform
+lspconfig.terraformls.setup({})
+-- vim.api.nvim_create_autocmd({"BufWritePre"}, {
+--   pattern = {"*.tf", "*.tfvars"},
+--   callback = function()
+--     vim.lsp.buf.format()
+--   end,
+-- })
+
 local cmp = require('cmp')
 
 cmp.setup({
