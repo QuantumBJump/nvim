@@ -141,8 +141,36 @@ vim.lsp.config("rust_analyzer", {
 })
 vim.lsp.enable("rust_analyzer")
 
-vim.lsp.config("pylsp", {})
-vim.lsp.enable("pylsp")
+-- vim.lsp.config("pyright",{})
+vim.lsp.config("ty",{
+    settings = {
+        ty = {
+            -- configuration = {
+            --     rules = {
+            --         ["unresolved-reference"] = "warn",
+            --     }
+            -- }
+        }
+    }
+})
+vim.lsp.enable("ty")
+
+vim.lsp.config("ruff",{})
+vim.lsp.enable("ruff")
+--vim.api.nvim_create_autocmd("LspAttach", {
+--    group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_various', { clear = true }),
+--    callback = function (args)
+--        local client = vim.lsp.get_client_by_id(args.data.client_id)
+--        if client == nil then
+--            return
+--        end
+--        if client.name == 'ruff' then
+--            --Disable hover in favour of Pyright
+--            client.server_capabilities.hoverProvider = false
+--        end
+--    end,
+--    desc = "LSP: Disable various ruff capabilities in favour of pyright",
+--})
 
 -- Terraform
 vim.lsp.config("terraformls", {})
