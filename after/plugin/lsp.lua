@@ -143,6 +143,9 @@ vim.lsp.enable("rust_analyzer")
 
 -- vim.lsp.config("pyright",{})
 vim.lsp.config("ty",{
+    on_attach = function(client, bufnr)
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+    end,
     settings = {
         ty = {
             -- configuration = {
