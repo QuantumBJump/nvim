@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- LANGUAGE SERVER SETUP
 local lspconfig = require('lspconfig')
 
-lspconfig.lua_ls.setup {
+vim.lsp.config("lua_ls", {
     on_init = function(client)
         if client.workspace_folders then
             local path = client.workspace_folders[1].name
@@ -66,9 +66,10 @@ lspconfig.lua_ls.setup {
     settings = {
         Lua = {}
     }
-}
+})
+vim.lsp.enable("lua_ls")
 
-require('lspconfig').gopls.setup({
+vim.lsp.config("gopls", {
     settings = {
         gopls = {
             directoryFilters = { '-plz-out' },
@@ -81,6 +82,7 @@ require('lspconfig').gopls.setup({
         },
     },
 })
+vim.lsp.enable("gopls")
 
 vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = "*.go",
@@ -106,19 +108,23 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 
 
-require('lspconfig').nil_ls.setup({})
+vim.lsp.config("nil_ls", {})
+vim.lsp.enable("nil_ls")
 
-require('lspconfig').nixd.setup({})
+vim.lsp.config("nixd", {})
+vim.lsp.enable("nixd")
 
-require('lspconfig').elixirls.setup({
+vim.lsp.config("elixirls", {
     cmd = {
         "elixir-ls"
     }
 })
+vim.lsp.enable("elixirls")
 
-require('lspconfig').clangd.setup({})
+vim.lsp.config("clangd", {})
+vim.lsp.enable("clangd")
 
-require('lspconfig').rust_analyzer.setup {
+vim.lsp.config("rust_analyzer", {
     on_attach = function(client, bufnr)
         vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
     end,
@@ -132,12 +138,15 @@ require('lspconfig').rust_analyzer.setup {
             },
         }
     }
-}
+})
+vim.lsp.enable("rust_analyzer")
 
-require('lspconfig').pylsp.setup({})
+vim.lsp.config("pylsp", {})
+vim.lsp.enable("pylsp")
 
 -- Terraform
-lspconfig.terraformls.setup({})
+vim.lsp.config("terraformls", {})
+vim.lsp.enable("terraformls")
 -- vim.api.nvim_create_autocmd({"BufWritePre"}, {
 --   pattern = {"*.tf", "*.tfvars"},
 --   callback = function()
