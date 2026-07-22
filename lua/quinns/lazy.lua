@@ -18,7 +18,10 @@ require("lazy").setup({
         tag = 'v0.2.1',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope-live-grep-args.nvim'
+            'nvim-telescope/telescope-live-grep-args.nvim',
+            {
+		    'nvim-telescope/telescope-fzf-native.nvim', build = 'make'
+            },
         },
     },
     {
@@ -63,6 +66,7 @@ require("lazy").setup({
     {
         'nvim-treesitter/nvim-treesitter',
         branch = "main",
+        lazy = false,
         build = ":TSUpdate"
     },
     {
