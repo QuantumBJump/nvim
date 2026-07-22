@@ -22,6 +22,9 @@ require("lazy").setup({
         },
     },
     {
+        "tidalcycles/vim-tidal",
+    },
+    {
         "julienvincent/hunk.nvim",
         cmd = { "DiffEditor" },
         config = function()
