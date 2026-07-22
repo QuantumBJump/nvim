@@ -24,9 +24,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
             { buffer = bufnr, remap = false, desc = 'view workspace symbols' })
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
             { buffer = bufnr, remap = false, desc = 'view diagnostics' })
-        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end,
+        vim.keymap.set("n", "[d", function() vim.diagnostic.jump({count=1, float=true}) end,
             { buffer = bufnr, remap = false, desc = 'previous diagnostic' })
-        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end,
+        vim.keymap.set("n", "]d", function() vim.diagnostic.jump({count=-1, float=true}) end,
             { buffer = bufnr, remap = false, desc = 'next diagnostic' })
         vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
             { buffer = bufnr, remap = false, desc = 'view code actions' })
