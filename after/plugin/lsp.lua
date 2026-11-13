@@ -184,6 +184,9 @@ vim.lsp.enable("ruff")
 --     vim.lsp.buf.format()
 --   end,
 -- })
+--
+vim.lsp.config("helm_ls", {})
+vim.lsp.enable("helm_ls")
 
 local cmp = require('cmp')
 

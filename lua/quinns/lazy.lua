@@ -14,6 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
+        "towolf/vim-helm",
+    },
+    {
         "nvim-telescope/telescope.nvim",
         tag = 'v0.2.1',
         dependencies = {
